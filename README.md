@@ -97,7 +97,7 @@ class CluePosition {
     readonly direction: ClueDirection;
     readonly start: Coordinate;
 
-    constructor(clue: Clue, index: number, direction: ClueDirection, start: [Coordinate]);
+    constructor(clue: Clue, index: number, direction: ClueDirection, start: Coordinate);
 }
 
 const clue1Position = new CluePosition(clue1, 1, ClueDirection.Down, new Coordinate(10, 0));
