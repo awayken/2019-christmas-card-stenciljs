@@ -1,0 +1,31 @@
+:host {
+  border: 2px solid black;
+  display: block;
+  height: 1.5em;
+  position: relative;
+  width: 1.5em;
+}
+
+.square {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.active {
+  background: cornflowerblue;
+}
+
+.selected,
+.square:focus {
+  background: yellow;
+}
+
+.wrong {
+  background: red;
+}

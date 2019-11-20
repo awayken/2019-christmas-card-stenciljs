@@ -17,6 +17,8 @@ export class AppHome {
           Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
         </p>
 
+        <p><xword-square></xword-square></p>
+
         <stencil-route-link url='/profile/stencil'>
           <button>
             Profile page

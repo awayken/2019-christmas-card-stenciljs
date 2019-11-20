@@ -17,6 +17,10 @@ export namespace Components {
     'match': MatchResults;
   }
   interface AppRoot {}
+  interface XwordSquare {
+    'status': string;
+    'value': string;
+  }
 }
 
 declare global {
@@ -39,10 +43,17 @@ declare global {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
   };
+
+  interface HTMLXwordSquareElement extends Components.XwordSquare, HTMLStencilElement {}
+  var HTMLXwordSquareElement: {
+    prototype: HTMLXwordSquareElement;
+    new (): HTMLXwordSquareElement;
+  };
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
+    'xword-square': HTMLXwordSquareElement;
   }
 }
 
@@ -52,11 +63,16 @@ declare namespace LocalJSX {
     'match'?: MatchResults;
   }
   interface AppRoot {}
+  interface XwordSquare {
+    'status'?: string;
+    'value'?: string;
+  }
 
   interface IntrinsicElements {
     'app-home': AppHome;
     'app-profile': AppProfile;
     'app-root': AppRoot;
+    'xword-square': XwordSquare;
   }
 }
 
@@ -69,6 +85,7 @@ declare module "@stencil/core" {
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'xword-square': LocalJSX.XwordSquare & JSXBase.HTMLAttributes<HTMLXwordSquareElement>;
     }
   }
 }
