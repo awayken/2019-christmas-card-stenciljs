@@ -1,0 +1,112 @@
+:host {
+  /* Display for puzzle or fallback to flexbox */
+  display: var(--clue-display, block);
+
+  /* Reset our font. Not sure if this is necessary */
+  font-size: 16px;
+}
+
+.clue {
+  /* Display for puzzle or fallback to flexbox */
+  display: var(--clue-display, flex);
+
+  /* Fallback styles when clue is on its own */
+  background: var(--primary-background, black);
+  border: 1px solid currentColor;
+  color: var(--primary-background);
+  font-size: var(--base-size);
+  height: auto;
+  margin: 1rem;
+  width: fit-content;
+}
+
+.clue:focus-within .clue__box {
+  /* Color all the clue boxes in this active clue */
+  background: cornsilk;
+
+  /* Raise this clue above any overlapping clues */
+  z-index: 10;
+}
+
+.clue__box:focus,
+.clue:focus-within .clue__box:focus {
+  /* Color the active clue box specifically */
+  background: hsl(220, 100%, 90%);
+}
+
+.clue--across {
+  /* Fallback styles when clue is on its own */
+  flex-direction: row;
+}
+
+.clue--down {
+  /* Fallback styles when clue is on its own */
+  flex-direction: column;
+}
+
+.clue--invalid {
+  /* What does it look like when we're wrong? */
+  --primary-background: hsl(10, 100%, 65%);
+}
+
+.clue__box {
+  /* Reset input styles */
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+
+  /* Color the box */
+  background: var(--secondary-background, white);
+  border: 1px solid currentColor;
+  color: var(--primary-background);
+
+  /* Place the box in the grid */
+  grid-column-start: var(--column);
+  grid-row-start: var(--row);
+  position: relative;
+  z-index: 1;
+
+  /* Style the text */
+  text-align: center;
+  text-transform: uppercase;
+
+  /* Fallback styles when clue is on its own */
+  height: var(--square-size, auto);
+  width: var(--square-size, auto);
+}
+
+/* Clue / Puzzle alignments */
+.clue--across .clue__box:nth-child(2) {
+  grid-column-start: calc(var(--column) + 1);
+}
+
+.clue--across .clue__box:nth-child(3) {
+  grid-column-start: calc(var(--column) + 2);
+}
+
+.clue--across .clue__box:nth-child(4) {
+  grid-column-start: calc(var(--column) + 3);
+}
+
+.clue--across .clue__box:nth-child(5) {
+  grid-column-start: calc(var(--column) + 4);
+}
+
+.clue--down .clue__box:nth-child(2) {
+  grid-row-start: calc(var(--row) + 1);
+}
+
+.clue--down .clue__box:nth-child(3) {
+  grid-row-start: calc(var(--row) + 2);
+}
+
+.clue--down .clue__box:nth-child(4) {
+  grid-row-start: calc(var(--row) + 3);
+}
+
+.clue--down .clue__box:nth-child(5) {
+  grid-row-start: calc(var(--row) + 4);
+}

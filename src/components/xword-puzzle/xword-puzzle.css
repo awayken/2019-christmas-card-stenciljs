@@ -1,0 +1,53 @@
+:host {
+  /* Squares per side */
+  --size: 10;
+
+  /* Width as a calculation of base size */
+  --height: var(--width);
+  --width: calc(var(--base-size, 1em) * 10);
+
+  /* Allow clue boxes to honor our puzzle grid */
+  --clue-display: contents;
+
+  /* Start column and row for this clue  */
+  --column: 1;
+  --row: 1;
+
+  /* Color the puzzle */
+  background: var(--primary-background);
+  border: 2px solid var(--primary-background);
+
+  /* Break puzzle into an even grid */
+  display: grid;
+  grid-template-columns: repeat(var(--size), calc(var(--width) / var(--size)));
+  grid-template-rows: repeat(var(--size), calc(var(--height) / var(--size)));
+
+  /* Make us a square puzzle */
+  height: var(--height);
+  width: var(--width);
+  margin: 1rem;
+}
+
+/* .square {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.active {
+  background: cornflowerblue;
+}
+
+.selected,
+.square:focus {
+  background: yellow;
+}
+
+.wrong {
+  background: red;
+} */

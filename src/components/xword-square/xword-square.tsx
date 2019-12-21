@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'xword-square.css',
   shadow: true
 })
-export class Square {
+export class CrosswordSquare {
   @Prop() value: string;
   @Prop() status: string;
 
@@ -20,11 +20,10 @@ export class Square {
   }
 
   render() {
-    // oDoc.focus();
+    const formattedValue = (this.value || '').toUpperCase();
+
     return (
-      <div class={`square ${this.getStatusClass()}`} contentEditable>
-        {this.value}
-      </div>
+      <input class={`square ${this.getStatusClass()}`} maxlength="1" value={formattedValue} />
     );
   }
 }

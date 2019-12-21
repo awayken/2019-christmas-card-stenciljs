@@ -1,4 +1,4 @@
-import { Square } from './xword-square';
+import { CrosswordSquare as Square } from './xword-square';
 
 describe('square', () => {
   it('builds', () => {
