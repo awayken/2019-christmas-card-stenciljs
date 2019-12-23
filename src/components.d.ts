@@ -13,7 +13,8 @@ import {
 
 export namespace Components {
   interface AppHome {}
-  interface AppProfile {
+  interface AppLevels {}
+  interface AppPuzzle {
     'match': MatchResults;
   }
   interface AppRoot {}
@@ -28,8 +29,8 @@ export namespace Components {
     'value': string;
   }
   interface XwordPuzzle {
-    'difficulty': number;
     'height': number;
+    'squares': CluePosition[];
     'width': number;
   }
   interface XwordSquare {
@@ -47,10 +48,16 @@ declare global {
     new (): HTMLAppHomeElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
+  interface HTMLAppLevelsElement extends Components.AppLevels, HTMLStencilElement {}
+  var HTMLAppLevelsElement: {
+    prototype: HTMLAppLevelsElement;
+    new (): HTMLAppLevelsElement;
+  };
+
+  interface HTMLAppPuzzleElement extends Components.AppPuzzle, HTMLStencilElement {}
+  var HTMLAppPuzzleElement: {
+    prototype: HTMLAppPuzzleElement;
+    new (): HTMLAppPuzzleElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -78,7 +85,8 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
+    'app-levels': HTMLAppLevelsElement;
+    'app-puzzle': HTMLAppPuzzleElement;
     'app-root': HTMLAppRootElement;
     'xword-clue': HTMLXwordClueElement;
     'xword-puzzle': HTMLXwordPuzzleElement;
@@ -88,7 +96,8 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppHome {}
-  interface AppProfile {
+  interface AppLevels {}
+  interface AppPuzzle {
     'match'?: MatchResults;
   }
   interface AppRoot {}
@@ -104,8 +113,8 @@ declare namespace LocalJSX {
     'value'?: string;
   }
   interface XwordPuzzle {
-    'difficulty'?: number;
     'height'?: number;
+    'squares'?: CluePosition[];
     'width'?: number;
   }
   interface XwordSquare {
@@ -115,7 +124,8 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'app-home': AppHome;
-    'app-profile': AppProfile;
+    'app-levels': AppLevels;
+    'app-puzzle': AppPuzzle;
     'app-root': AppRoot;
     'xword-clue': XwordClue;
     'xword-puzzle': XwordPuzzle;
@@ -130,7 +140,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+      'app-levels': LocalJSX.AppLevels & JSXBase.HTMLAttributes<HTMLAppLevelsElement>;
+      'app-puzzle': LocalJSX.AppPuzzle & JSXBase.HTMLAttributes<HTMLAppPuzzleElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'xword-clue': LocalJSX.XwordClue & JSXBase.HTMLAttributes<HTMLXwordClueElement>;
       'xword-puzzle': LocalJSX.XwordPuzzle & JSXBase.HTMLAttributes<HTMLXwordPuzzleElement>;

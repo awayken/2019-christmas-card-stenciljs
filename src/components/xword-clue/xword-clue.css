@@ -74,8 +74,8 @@
   text-transform: uppercase;
 
   /* Fallback styles when clue is on its own */
-  height: var(--square-size, auto);
-  width: var(--square-size, auto);
+  min-height: var(--square-size, auto);
+  min-width: var(--square-size, auto);
 }
 
 /* Clue / Puzzle alignments */
@@ -95,6 +95,26 @@
   grid-column-start: calc(var(--column) + 4);
 }
 
+.clue--across .clue__box:nth-child(6) {
+  grid-column-start: calc(var(--column) + 5);
+}
+
+.clue--across .clue__box:nth-child(7) {
+  grid-column-start: calc(var(--column) + 6);
+}
+
+.clue--across .clue__box:nth-child(8) {
+  grid-column-start: calc(var(--column) + 7);
+}
+
+.clue--across .clue__box:nth-child(9) {
+  grid-column-start: calc(var(--column) + 8);
+}
+
+.clue--across .clue__box:nth-child(10) {
+  grid-column-start: calc(var(--column) + 9);
+}
+
 .clue--down .clue__box:nth-child(2) {
   grid-row-start: calc(var(--row) + 1);
 }
@@ -109,4 +129,24 @@
 
 .clue--down .clue__box:nth-child(5) {
   grid-row-start: calc(var(--row) + 4);
+}
+
+.clue--down .clue__box:nth-child(6) {
+  grid-row-start: calc(var(--row) + 5);
+}
+
+.clue--down .clue__box:nth-child(7) {
+  grid-row-start: calc(var(--row) + 6);
+}
+
+.clue--down .clue__box:nth-child(8) {
+  grid-row-start: calc(var(--row) + 7);
+}
+
+.clue--down .clue__box:nth-child(9) {
+  grid-row-start: calc(var(--row) + 8);
+}
+
+.clue--down .clue__box:nth-child(10) {
+  grid-row-start: calc(var(--row) + 9);
 }

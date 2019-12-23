@@ -12,10 +12,10 @@ export default class CluePosition {
   readonly direction: ClueDirection;
   readonly start: Coordinate;
 
-  constructor(clue: Clue, index: number, direction: ClueDirection, start: Coordinate) {
-    this.clue = clue;
+  constructor(id: string, question: string, answer: string, index: number, direction: ClueDirection, column: number, row: number) {
+    this.clue = new Clue(id, question, answer.split(''));
     this.index = index;
     this.direction = direction;
-    this.start = start;
+    this.start = new Coordinate(column, row);
   }
 }

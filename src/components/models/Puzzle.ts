@@ -22,7 +22,7 @@ export default class Puzzle {
   checkPuzzle(): boolean {
     for (const { clue } of this.board) {
       const possibleAnswer = this.answers.get(clue.id);
-      const isCorrect = clue.checkAnswer(possibleAnswer);
+      const isCorrect = clue.checkAnswer(possibleAnswer.toString());
 
       if (!isCorrect) {
         return false;

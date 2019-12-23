@@ -70,8 +70,8 @@ export class CrosswordClue {
     const fontSize = this.squareSize / 30;
 
     const styleRules = {
-      '--column': `${this.column}`,
-      '--row': `${this.row}`,
+      '--column': `${this.column || 1}`,
+      '--row': `${this.row || 1}`,
       '--square-size': `${this.squareSize}px`,
 
       fontSize: `${fontSize}em`

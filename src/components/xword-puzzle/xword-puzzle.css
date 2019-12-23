@@ -1,10 +1,15 @@
 :host {
+  display: block;
+}
+
+.puzzle {
   /* Squares per side */
-  --size: 10;
+  --columns: 10;
+  --rows: 10;
 
   /* Width as a calculation of base size */
-  --height: var(--width);
   --width: calc(var(--base-size, 1em) * 10);
+  --height: var(--height, auto);
 
   /* Allow clue boxes to honor our puzzle grid */
   --clue-display: contents;
@@ -19,35 +24,11 @@
 
   /* Break puzzle into an even grid */
   display: grid;
-  grid-template-columns: repeat(var(--size), calc(var(--width) / var(--size)));
-  grid-template-rows: repeat(var(--size), calc(var(--height) / var(--size)));
+  grid-template-columns: repeat(var(--columns), calc(var(--width) / var(--columns)));
+  grid-template-rows: repeat(var(--rows), calc(var(--height) / var(--rows)));
 
   /* Make us a square puzzle */
   height: var(--height);
   width: var(--width);
   margin: 1rem;
 }
-
-/* .square {
-  align-items: center;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.active {
-  background: cornflowerblue;
-}
-
-.selected,
-.square:focus {
-  background: yellow;
-}
-
-.wrong {
-  background: red;
-} */

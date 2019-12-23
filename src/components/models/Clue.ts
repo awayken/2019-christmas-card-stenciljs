@@ -1,5 +1,3 @@
-import Answer from './Answer'
-
 export default class Clue {
   private answer: string[];
 
@@ -16,14 +14,13 @@ export default class Clue {
     this.answer = answer;
   }
 
-  checkAnswer(possibleAnswer: Answer): boolean {
+  checkAnswer(possibleAnswer: string): boolean {
     const flatAnswer = this.answer.join('');
 
     if (!possibleAnswer) {
       return false;
     }
 
-    // TODO: should we check ID, too?
-    return possibleAnswer.toString() === flatAnswer;
+    return possibleAnswer === flatAnswer;
   }
 }
