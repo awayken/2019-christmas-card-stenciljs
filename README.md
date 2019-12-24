@@ -2,6 +2,8 @@
 
   > Can you solve our Rauschword puzzles?
 
+**NOTE:** This project has been deprecated in favor of a more pure Web Component version.
+
 ## How to Run
 
 ```bash
